@@ -6,10 +6,13 @@
         <title>Kanak's Portfolio</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar">
-            <div class="logo">Kanak</div>
+            <div class="logo">Kanak Kumari.</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -19,19 +22,22 @@
         </nav>
         <section id = "home" class = "home">
             <div class = "container">
-            <h1>Kanak Kumari</h1>
-            <p>Welcome to my portfolio!</p>
-            <p>I am a BCA student who is aspiring to become a full-stack developer.
-                Currently I'm working on my web development skills.</p>
-                <a class="btn" href="#projects">View My Projects</a>
+                <img src = "image/pfp.png" alt = "Kanak Kumari" class = "profile-image">
+                <h1>Kanak Kumari</h1>
+                <p>Welcome to my portfolio!</p>
+                <p>I am a BCA student who is aspiring to become a full-stack developer.
+                    Currently I'm working on my web development skills.</p>
+                    <a class="btn" href="#projects">View My Projects</a>
             </div>
         </section>
         <section id = "about" class = "about">
             <div class = "container">
-                <h1>About Me!</h1>
-                <h3>Hello,I'm Kanak</h3>
-                <p>I'm a passionate web developer with experience in creating responsive and user friendly websites using HTML and CSS. Currently, I'm working on expanding my skills in JavaScript and backend development.I aspire to become a full-stack developer. Everyday i am trying to build a new and different projects inorder to improve my skills. </p>
-                <h3>Skills</h3>
+                <img src = "image/kanak.png" alt = "Kanak Kumari" class = "about-image">
+                <div class="about-content">
+                    <h1>About Me!</h1>
+                    <h2>Hello,I'm Kanak</h2>
+                    <p>I'm a passionate web developer with experience in creating responsive and user friendly websites using HTML and CSS. Currently, I'm working on expanding my skills in JavaScript and backend development.I aspire to become a full-stack developer. Everyday i am trying to build a new and different projects inorder to improve my skills. </p>
+                    <h3>Skills</h3>
                     <div class="about-stats">
                         <div class="stat">
                         <h4>HTML</h4>
@@ -46,6 +52,7 @@
                         <p>Beginner</p>
                     </div>
                 </div>
+                </div>
             </div>  
         </section>
         <section id = "projects" class = "projects">
@@ -53,34 +60,46 @@
             <h1>My Projects</h1>
             <div class="project-list">
                 <div class="project">
-                    <h3>Kanak's Bliss & Bean Cafe</h3>
-                    <p>A responsive website for a cafe, showcasing the menu, location, and contact information.</p>
+                    <h3>Bliss & Bean</h3>
+                    <p>A modern and fully responsive coffee shop website showcasing elegant layouts, smooth navigation, and mobile-friendly responsiveness.</p>
                     <img src = "image/blissandbeancafe.jpg" alt = "Bliss and Bean Cafe">
                     <a href = "https://kanak1507.github.io/kanaks-bliss-and-bean/" target = "_blank">View Project</a>
+                   <br>
+                    <a href="https://github.com/kanak1507/kanaks-bliss-and-bean" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
                 </div>
                 <div class="project">
                     <h3>Bliss & Petals</h3>
-                    <p>A responsive website for a cafe, showcasing the menu, location, and contact information.</p>
+                    <p>A responsive floral boutique website built with HTML and CSS, featuring elegant product pages, intuitive navigation, and a modern shopping experience.</p>
                     <img src = "image/blissandpetals.png" alt = "Bliss & Petals">
                     <a href = "https://kanak1507.github.io/blissandpetals/" target = "_blank">View Project</a>
+                    <br>
+                    <a href="https://github.com/kanak1507/blissandpetals" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
                 </div>
                 <div class="project">
                     <h3>TechNova Registration Form</h3>
-                    <p>A simple registration form for a tech event, built with HTML and CSS.</p>
+                    <p>A simple registration form for a tech event, built with HTML and CSS with submission form.</p>
                     <img src = "image/technova.jpg" alt = "TechNova Registration Form">
                     <a href = "https://kanak1507.github.io/TechNovaRegistrationForm" target = "_blank">View Project</a>
+                    <br>
+                    <a href="https://github.com/kanak1507/TechNovaRegistrationForm" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
             </div>
         </section>
         <section id = "contact" class = "contact">
             <div class = "container">
-            <h1>Contact Me</h1>
-            <p>Feel free to reach out if you have any questions or would like to collaborate!</p>
-            <ul>
-                <li><a href="https://linkedin.com/in/kanak1507" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                <li><a href="https://github.com/kanak1507" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-            </ul>
+                <div class="contact-card">
+                    <h1>Contact Me</h1>
+                    <p>Feel free to reach out if you have any questions, want to collaborate, or just want to say hello!</p>
+                    <div class="contact-links">
+                        <a href="https://linkedin.com/in/kanak1507" target="_blank" class="contact-btn">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/kanak1507" target="_blank" class="contact-btn">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
         <footer>
