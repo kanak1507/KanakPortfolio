@@ -2,15 +2,48 @@
 Generic Styling
 =====================*/
 :root{
+  color-scheme: dark;
   --bg:#07121f;
   --bg-light:#102235;
+  --surface:#0d141c;
+  --surface-elevated:#13263a;
   --primary:#7c5cff;
   --secondary:#5b8dff;
-  --text:#ffffff;
-  --text-light:#cfd8e3;
+  --text:#f4f7fb;
+  --text-light:#c9d6e5;
   --card:#0d141c;
-  --shadow:0 15px 35px rgba(0,0,0,.25);
+  --border:#2f455a;
+  --shadow:0 15px 35px rgba(2,8,23,.3);
+  --shadow-soft:0 10px 25px rgba(2,8,23,.18);
   --h1:#95c8d8;
+  --heading-glow:rgba(0,225,255,.3);
+  --image-glow:rgba(124,92,255,.35);
+  --image-glow-strong:rgba(91,141,255,.22);
+  --button-bg:rgba(124,92,255,.14);
+  --button-hover-bg:rgba(124,92,255,.22);
+  --button-hover-shadow:rgba(91,141,255,.28);
+}
+.lightmode{
+  color-scheme: light;
+  --bg:#f4f7fb;
+  --bg-light:#e9f0ff;
+  --surface:#ffffff;
+  --surface-elevated:#f6f9ff;
+  --primary:#6c4df6;
+  --secondary:#3b82f6;
+  --text:#111827;
+  --text-light:#475569;
+  --card:#ffffff;
+  --border:#d9e3ef;
+  --shadow:0 15px 35px rgba(15,23,42,.08);
+  --shadow-soft:0 10px 25px rgba(15,23,42,.06);
+  --h1:#0f172a;
+  --heading-glow:rgba(59,130,246,.2);
+  --image-glow:rgba(108,77,246,.16);
+  --image-glow-strong:rgba(59,130,246,.16);
+  --button-bg:rgba(108,77,246,.12);
+  --button-hover-bg:rgba(108,77,246,.2);
+  --button-hover-shadow:rgba(59,130,246,.2);
 }
 *{
   margin:0;
@@ -26,6 +59,7 @@ body{
   line-height:1.6;
   background:linear-gradient(90deg,var(--bg),var(--bg-light));
   color:var(--text);
+  transition:background-color .3s ease,color .3s ease;
 }
 a{
   text-decoration:none;
@@ -58,9 +92,9 @@ Navigation Bar
   justify-content:space-between;
   align-items:center;
   padding:1rem 2rem;
-  background:var(--bg);
+  background:var(--surface);
   border-bottom:2px solid var(--primary);
-  box-shadow:0 16px 40px rgba(45,33,25,.12);
+  box-shadow:var(--shadow-soft);
 }
 .logo{
   font-size:1.6rem;
@@ -90,6 +124,33 @@ Navigation Bar
 .projects, .about, .contact{
   scroll-margin-top: 15px;
 }
+#theme-switch{
+  padding:0;
+  height:50px;
+  width:50px;
+  border:none;
+  border-radius:60%;
+  background-color: var(--surface);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:transform .2s ease, background-color .3s ease;
+}
+#theme-switch:hover{
+  transform:scale(1.05);
+}
+#theme-switch svg{
+  fill:var(--secondary);
+}
+#theme-switch svg:last-child{
+  display:none;
+}
+.lightmode #theme-switch svg:first-child{
+  display:none;
+}.lightmode #theme-switch svg:last-child{
+  display:block;
+}
 /*====================
 Home/Hero Section
 =====================*/
@@ -100,11 +161,12 @@ Home/Hero Section
   height: calc(100vh - 80px);
   background: linear-gradient(90deg,var(--bg),var(--bg-light));
 }
+
 .home h1{
   font-size: 3rem;
   color: var(--h1);
   text-align: left;
-  text-shadow: 2px 2px 4px rgba(0, 225, 255, 0.539);
+  text-shadow: 2px 2px 4px var(--heading-glow);
 }
 .home p{
   font-size: 1.2rem;
@@ -112,21 +174,25 @@ Home/Hero Section
   text-align: left;
   margin: 10px 0;
 }
+.home-p{
+  text-align: justify;
+}
 .btn{
   display: inline-block;
   padding: 10px 20px;
   gap: 15px;
   font-size: 1rem;
-  background: var(--bg-light);
+  background: var(--button-bg);
   color: var(--primary);
   border: 2px solid var(--primary);
   cursor: pointer;
   border-radius: 20px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
   margin-top: 2rem;
 }
 .btn:hover{
-  box-shadow: 0 0 10px var(--secondary), 0 0 10px var(--secondary), 0 0 10px var(--secondary), 0 0 10px var(--secondary);
+  background: var(--button-hover-bg);
+  box-shadow: 0 0 12px var(--button-hover-shadow);
 }
 .profile-image {
   width: 180px;
@@ -134,7 +200,7 @@ Home/Hero Section
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary);
-  box-shadow: 0 0 20px rgba(124, 92, 255, 0.5), 0 0 40px rgba(91, 141, 255, 0.3);
+  box-shadow: 0 0 20px var(--image-glow), 0 0 40px var(--image-glow-strong);
   flex-shrink: 0;
   text-align: center;
 }
@@ -163,7 +229,7 @@ About Me Section
   color: var(--h1);
   text-align: left;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 225, 255, 0.539);
+  text-shadow: 2px 2px 4px var(--heading-glow);
 }
 .about h2{
   font-size: 2rem;
@@ -178,7 +244,7 @@ About Me Section
   text-align: left;
   margin-bottom: 30px;
   margin-left: 20px;
-  text-shadow: 2px 2px 4px rgba(124, 92, 255, 0.3);
+  text-shadow: 2px 2px 4px var(--heading-glow);
   font-weight: 600;
 }
 .about p{
@@ -194,14 +260,14 @@ About Me Section
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary);
-  box-shadow: 0 0 20px rgba(124, 92, 255, 0.5), 0 0 40px rgba(91, 141, 255, 0.3);
+  box-shadow: 0 0 20px var(--image-glow), 0 0 40px var(--image-glow-strong);
   flex-shrink: 0;
   transition: all 0.3s ease;
   margin-right: 2rem;
 }
 .about-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(124, 92, 255, 0.8), 0 0 50px rgba(91, 141, 255, 0.5);
+  box-shadow: 0 0 30px var(--image-glow), 0 0 50px var(--image-glow-strong);
 }
 /*====================
 Stats Section
@@ -261,7 +327,7 @@ Projects Section
   color: var(--h1);
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 225, 255, 0.539);
+  text-shadow: 2px 2px 4px var(--heading-glow);
 }
 .projects h3{
   font-size: 1.8rem;
@@ -293,34 +359,44 @@ Projects Section
   text-align: center;
 }
 .project img{
-  width: 80%;
-  height: auto;
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
+  height: 180px;
+  object-fit:cover;
+
 }
 .projects .project-list{
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 .project a{
-  display: inline-block;
+  display: flex;
   padding: 10px;
   gap: 10px;
   font-size: 0.9rem;
-  background: var(--bg-light);
+  background: var(--button-bg);
   color: var(--primary);
   border: 2px solid var(--primary);
   cursor: pointer;
   border-radius: 20px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 .project a:hover{
-  box-shadow: 0 0 10px var(--secondary), 0 0 10px var(--secondary), 0 0 10px var(--secondary), 0 0 10px var(--secondary);
-  background: var(--bg-light);
+  box-shadow: 0 0 12px var(--button-hover-shadow);
+  background: var(--button-hover-bg);
   color: var(--text);
+}
+.project-links{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .project:hover{
   transform: translateY(-10px);
@@ -345,7 +421,7 @@ Contact and footer Section
 }
 .contact-card{
   width: min(100%, 700px);
-  background: linear-gradient(135deg, rgba(13, 20, 28, 0.95) 0%, rgba(16, 34, 53, 0.95) 100%);
+  background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--bg-light) 100%);
   border: 2px solid var(--primary);
   border-radius: 24px;
   padding: 40px 30px;
@@ -356,7 +432,7 @@ Contact and footer Section
   font-size: 2.5rem;
   color: var(--h1);
   margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 225, 255, 0.539);
+  text-shadow: 2px 2px 4px var(--heading-glow);
 }
 .contact-card p{
   font-size: 1rem;
@@ -376,15 +452,15 @@ Contact and footer Section
   align-items: center;
   padding: 12px 18px;
   border-radius: 30px;
-  background: rgba(124, 92, 255, 0.12);
+  background: var(--button-bg);
   color: var(--text);
   border: 1px solid var(--primary);
   transition: all 0.3s ease;
 }
 .contact-btn:hover{
   transform: translateY(-3px);
-  background: rgba(124, 92, 255, 0.2);
-  box-shadow: 0 0 15px rgba(91, 141, 255, 0.25);
+  background: var(--button-hover-bg);
+  box-shadow: 0 0 15px var(--button-hover-shadow);
 }
 footer{
   text-align: center;
