@@ -124,6 +124,9 @@ Navigation Bar
 .projects, .about, .contact{
   scroll-margin-top: 15px;
 }
+/*====================
+light mode
+=====================*/
 #theme-switch{
   padding:0;
   height:50px;
