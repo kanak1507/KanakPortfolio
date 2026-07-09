@@ -30,9 +30,10 @@
     </ul>
     <ul class="sidebar">
       <li onclick= hideSideBar()><a href = "#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" onclick="hideSideBar()">Home</a></li>
+      <li><a href="#about" onclick="hideSideBar()">About</a></li>
+      <li><a href="#projects" onclick="hideSideBar()">Projects</a></li>
+      <li><a href="#contact" onclick="hideSideBar()">Contact</a></li>
   </ul>
   </nav>
 <section id="home" class="home">
@@ -55,10 +56,17 @@
 
             <div class="hero-buttons">
                 <a class="btn" href="#projects">View Projects</a>
+                <!--
+                <a class="btn btn-outline"
+                   href="assets/Kanak_Kumari_Resume.pdf"
+                   target="_blank">
+                   Download Resume
+                </a>
+                -->
             </div>
         </div>
         <div class="hero-image">
-            <img src="image/profile.png"
+            <img src="profile.png"
                  alt="Kanak Kumari"
                  class="profile-image">
         </div>
@@ -142,8 +150,14 @@
           </div>
       </div>
   </section>
-  <footer>
-      <p>&copy; 2026 Kanak Kumari. All rights reserved.</p>
+  <footer class="footer">
+      <div class="footer-bottom">
+          <p>&copy; 2026 Kanak Kumari. All rights reserved.</p>
+          <div class="footer-social">
+              <a href="https://linkedin.com/in/kanak1507" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/kanak1507" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+      </div>
   </footer>
   <script type = "text/javascript" src = "lightmode.js" defer>
   </script>
