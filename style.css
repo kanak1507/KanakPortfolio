@@ -240,23 +240,8 @@ Home/Hero Section
     gap:20px;
     margin-top:30px;
     flex-wrap:wrap;
+    text-align:center;
 }
-
-.social-links{
-    display:flex;
-    gap:20px;
-    margin-top:35px;
-}
-
-.social-links a{
-    color:var(--text-light);
-    transition:.3s;
-}
-
-.social-links a:hover{
-    color:var(--secondary);
-}
-
 .profile-image{
     width:320px;
     height:320px;
